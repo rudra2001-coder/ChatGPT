@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" backgroundColor="#E6F3FF">
+    <ActionBar title="ChatGPT App" backgroundColor="#2196F3" color="white" />
+    
+    <GridLayout rows="*, auto">
+        <ListView items="{{ messageList }}" row="0" separatorColor="transparent" backgroundColor="transparent">
+            <ListView.itemTemplate>
+                <GridLayout columns="*" class="{{ isUser ? 'user-message' : 'ai-message' }}">
+                    <StackLayout padding="10" margin="5" borderRadius="10"
+                        backgroundColor="{{ isUser ? '#2196F3' : '#FFFFFF' }}">
+                        <Label text="{{ content }}" textWrap="true" 
+                            color="{{ isUser ? '#FFFFFF' : '#000000' }}" />
+                        <Label text="{{ timestamp, 'HH:mm' }}" fontSize="12"
+                            color="{{ isUser ? '#E0E0E0' : '#757575' }}" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <GridLayout rows="auto" columns="*, auto" row="1" backgroundColor="#FFFFFF" padding="10">
+            <TextField col="0" hint="Type your message..." text="{{ messageText }}" />
+            <Button col="1" text="Send" tap="{{ sendMessage }}" backgroundColor="#2196F3" color="white" />
+        </GridLayout>
+    </GridLayout>
+</Page>

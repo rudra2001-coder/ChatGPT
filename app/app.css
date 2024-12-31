@@ -1,0 +1,27 @@
+/* App styles */
+.user-message {
+    margin-right: 10;
+    margin-left: 50;
+}
+
+.ai-message {
+    margin-left: 10;
+    margin-right: 50;
+}
+
+ActionBar {
+    background-color: #2196F3;
+    color: white;
+}
+
+Page {
+    background-color: #E6F3FF;
+}
+
+Button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10;
+    margin: 5;
+    border-radius: 5;
+}
